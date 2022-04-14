@@ -1,9 +1,10 @@
 # Sample Properties for Kafka
 
-The property **org.kie.server.jbpm-kafka.ext.topics.ExampleName** shows  
+The property **org.kie.server.jbpm-kafka.ext.topics.ExampleMessage** shows  
 how you can map a Kafka topic to a Message name in your BPM Process.  
 In this case, we want to map a topic called **my-kafka-topic1** to  
-a BPM messaged called **ExampleName**.
+a BPM message called **ExampleMessage**.  In the **Start Message** task of your process,  
+you need to specify the **Message** property as **ExampleMessage**
 
 ```
 <!-- ========================== Kafka- Related Configuration Properties ============================== -->
@@ -13,9 +14,9 @@ a BPM messaged called **ExampleName**.
 <property name="org.kie.server.jbpm-kafka.ext.group.id" value="YOUR_GROUP_ID" />
 <!-- 
   In the following property, we are mapping the Kafka topic 'my-kafka-topic1' to a Message in our Start Event
-   the Message attribute of your start event should be set to 'ExampleName'
+   the Message attribute of your start event should be set to 'ExampleMessage'
  -->
-<property name="org.kie.server.jbpm-kafka.ext.topics.ExampleName" value="my-kafka-topic1"/>
+<property name="org.kie.server.jbpm-kafka.ext.topics.ExampleMessage" value="my-kafka-topic1"/>
 
 <property name="org.kie.server.jbpm-kafka.ext.auto.offset.reset" value="latest" />
 
