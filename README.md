@@ -23,3 +23,16 @@
 <property name="org.kie.server.jbpm-kafka.ext.security.protocol" value="SSL" />
 <!-- End of SSL Config -->
 ```
+
+# Sample Properties for Invoking Restful Service over SSL
+```
+<!-- ========================== Restful over SSL Configuration Properties ============================== -->
+<property name="org.kie.workitem.rest.useSystemProperties" value="true" />
+<property name="javax.net.ssl.trustStore" value="" />
+<property name="javax.net.ssl.trustStorePassword" value="" />
+<property name="javax.net.ssl.trustStoreType" value="JKS" />
+
+<property name="javax.net.ssl.keyStore" value="" />
+<property name="javax.net.ssl.keyStorePassword" value="" />
+<property name="javax.net.ssl.keyStoreType" value="JKS" />
+```
