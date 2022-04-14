@@ -1,6 +1,10 @@
 
 # Sample Properties for Kafka
 
+By default, Kafka support in RHPAM is actually disabled.  To enable the feature,  
+set the **org.kie.kafka.server.ext.disabled** property to **false**.  
+
+
 The property **org.kie.server.jbpm-kafka.ext.topics.ExampleMessage** shows  
 how you can map a Kafka topic to a Message name in your BPM Process.  
 In this case, we want to map a topic called **my-kafka-topic1** to  
