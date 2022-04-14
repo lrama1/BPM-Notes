@@ -1,3 +1,4 @@
+
 # Sample Properties for Kafka
 
 The property **org.kie.server.jbpm-kafka.ext.topics.ExampleMessage** shows  
@@ -31,6 +32,10 @@ you need to specify the **Message** property as **ExampleMessage**
 ```
 
 # Sample Properties for Invoking Restful Service over SSL
+
+Setting the **org.kie.workitem.rest.useSystemProperties** to **true** is quite important.  
+Without it, all the system properties will be ignored by the KIE Server.
+
 ```
 <!-- ========================== Restful over SSL Configuration Properties ============================== -->
 <property name="org.kie.workitem.rest.useSystemProperties" value="true" />
