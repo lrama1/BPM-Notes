@@ -1,5 +1,10 @@
 # Sample Properties for Kafka
 
+The property **org.kie.server.jbpm-kafka.ext.topics.ExampleName** shows  
+how you can map a Kafka topic to a Message name in your BPM Process.  
+In this case, we want to map a topic called **my-kafka-topic1** to  
+a BPM messaged called **ExampleName**.
+
 ```
 <!-- ========================== Kafka- Related Configuration Properties ============================== -->
 
