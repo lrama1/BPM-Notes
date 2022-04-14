@@ -1,2 +1,25 @@
-# BPM-Notes
-Notes for setting up RHPAM
+# Sample Properties for Kafka
+
+```
+<!-- ========================== Kafka- Related Configuration Properties ============================== -->
+
+<property name="org.kie.kafka.server.ext.disabled" value="false" />
+<property name="org.kie.server.jbpm-kafka.ext.bootstrap.servers" value="BOOTSTRAP_SERVER_HOSTNAMES_AND_PORT" />
+<property name="org.kie.server.jbpm-kafka.ext.group.id" value="YOUR_GROUP_ID" />
+<!-- 
+  In the following property, we are mapping the Kafka topic 'my-kafka-topic1' to a Message in our Start Event
+   the Message attribute of your start event should be set to 'ExampleName'
+ -->
+<property name="org.kie.server.jbpm-kafka.ext.topics.ExampleName" value="my-kafka-topic1"/>
+
+<property name="org.kie.server.jbpm-kafka.ext.auto.offset.reset" value="latest" />
+
+<!-- SSL Config needed if you are connecting to a Broker over SSL -->
+<property name="org.kie.server.jbpm-kafka.ext.ssl.keystore.location" value="" />
+<property name="org.kie.server.jbpm-kafka.ext.ssl.keystore.password" value="" />
+
+<property name="org.kie.server.jbpm-kafka.ext.ssl.truststore.location" value="" />
+<property name="org.kie.server.jbpm-kafka.ext.ssl.truststore.password" value="" />
+<property name="org.kie.server.jbpm-kafka.ext.security.protocol" value="SSL" />
+<!-- End of SSL Config -->
+```
