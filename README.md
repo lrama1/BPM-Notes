@@ -16,7 +16,10 @@
     ```
     auto-deploy-zippped="true" auto-deploy-exploded="true" 
     ``` 	
-
+10. Create the pamAdmin user for Business Central
+```
+jboss-cli.sh --commands="embed-server --std-out=echo,/subsystem=elytron/filesystem-realm=ApplicationRealm:add-identity(identity=pamAdmin),/subsystem=elytron/filesystem-realm=ApplicationRealm:set-password(identity=pamAdmin, clear={password='<PASSWORD>'}),/subsystem=elytron/filesystem-realm=ApplicationRealm:add-identity-attribute(identity=pamAdmin, name=role, value=[admin,rest-all,kie-server])"
+```
 
 
 # Sample Properties for Kafka
