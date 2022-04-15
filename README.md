@@ -14,13 +14,25 @@
 	click 'Yes to All'	
 9.  Modify the <deployment-scanner> element  in the **standalone-full.xml** and add the following attributes:  
     ```
-    auto-deploy-zippped="true" auto-deploy-exploded="true" 
+    auto-deploy-zipped="true" auto-deploy-exploded="true" 
     ``` 	
-10. Create the pamAdmin user for Business Central
+10. Create the pamAdmin user for Business Central.  Make sure to set the <PASSWORD>
 ```
-jboss-cli.sh --commands="embed-server --std-out=echo,/subsystem=elytron/filesystem-realm=ApplicationRealm:add-identity(identity=pamAdmin),/subsystem=elytron/filesystem-realm=ApplicationRealm:set-password(identity=pamAdmin, clear={password='<PASSWORD>'}),/subsystem=elytron/filesystem-realm=ApplicationRealm:add-identity-attribute(identity=pamAdmin, name=role, value=[admin,rest-all,kie-server])"
+jboss-cli.bat --commands="embed-server --std-out=echo,/subsystem=elytron/filesystem-realm=ApplicationRealm:add-identity(identity=pamAdmin),/subsystem=elytron/filesystem-realm=ApplicationRealm:set-password(identity=pamAdmin, clear={password=<PASSWORD>}),/subsystem=elytron/filesystem-realm=ApplicationRealm:add-identity-attribute(identity=pamAdmin, name=role, value=[admin,rest-all,kie-server])"
 ```
 
+11.  Uncomment the **KIE Server Properties** in the **<system-properties>** element of the **standalone-full.xml** file.  
+     And then, make sure to set the **org.kie.server.controller.user** and **org.kie.server.user** to the user created in step 10.  
+	 Don't forget to set the correct passwords too.
+
+# Running JBOSS which contains the RHPAM
+
+1.  Go to the **<JBOSS Home>/bin** directory and type in the following command:  
+```
+standalone.bat -c standalone-full.xml
+```
+
+2.  Login to:  **localhost:8080/business-central**
 
 # Sample Properties for Kafka
 
