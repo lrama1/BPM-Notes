@@ -12,6 +12,10 @@
 8.  Copy the contents of **SecurityPolicy** directory into **<JBOSS Install>/bin**.  
     NOTE: The operating system should prompt you if you want to overwrite the same files.  At this point,  
 	click 'Yes to All'	
+9.  Modify the <deployment-scanner> element  in the **standalone-full.xml** and add the following attributes:  
+    ```
+    auto-deploy-zippped="true" auto-deploy-exploded="true" 
+    ``` 	
 
 
 
