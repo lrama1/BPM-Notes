@@ -36,15 +36,21 @@ standalone.bat -c standalone-full.xml
 
 # Sample Properties for Kafka
 
-By default, Kafka support in RHPAM is actually disabled.  To enable the feature,  
+- By default, Kafka support in RHPAM is actually disabled.  To enable the feature,  
 set the **org.kie.kafka.server.ext.disabled** property to **false**.  
 
 
-The property **org.kie.server.jbpm-kafka.ext.topics.ExampleMessage** shows  
+- The property **org.kie.server.jbpm-kafka.ext.topics.ExampleMessage** shows  
 how you can map a Kafka topic to a Message name in your BPM Process.  
 In this case, we want to map a topic called **my-kafka-topic1** to  
-a BPM message called **ExampleMessage**.  In the **Start Message** task of your process,  
-you need to specify the **Message** property as **ExampleMessage**
+a BPM message called **ExampleMessage**.  
+
+- In the **Start Message** task of your process,  
+you need to specify the **Message** property as **ExampleMessage**  
+
+- On the **Data Assignments** section of your **Start Message** you must define a new output named **data** (do not deviate from this name) then set the target to your desired Process Variable.  
+
+
 
 ```
 <!-- ========================== Kafka- Related Configuration Properties ============================== -->
